@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: bbp-config-service
+  profiles:
+    active: native
+  cloud:
+    #temporary solution before creating git config storage. change to your config location
+    config.server.native.searchLocations: file://${user.home}/development/middle/fbtq/bbp-config-service/src/main/resources/config/shared
+server:
+  port: 8000
+eureka:
+  client:
+    registryFetchIntervalInSeconds: 10
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/

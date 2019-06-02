@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: 'bbp-gateway-service'
+server:
+  port: 8062
+eureka:
+  client:
+    registryFetchIntervalInSeconds: 10
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+zuul:
+  prefix: /api/v1
+  stripPrefix: false
+  routes:
+    users:
+      stripPrefix: false
+      path: /usersservice/**
+      serviceId: bbp-users-service
+    purchases:
+      stripPrefix: false
+      path: /purchaseservice/**
+      serviceId: bbp-purchase-service
+    warehouse:
+      stripPrefix: false
+      path: /warehouseservice/**
+      serviceId: bbp-warehouse-service

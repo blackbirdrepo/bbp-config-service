@@ -26,3 +26,7 @@ eureka:
     registryFetchIntervalInSeconds: 10
     serviceUrl:
       defaultZone: http://localhost:8061/eureka/
+kafka:
+  bootstrapAddress: localhost:9092
+  topics:
+    email: template_email_sender

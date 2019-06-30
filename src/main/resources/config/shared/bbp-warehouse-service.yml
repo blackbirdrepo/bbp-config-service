@@ -17,10 +17,21 @@ spring:
     url: 'jdbc:postgresql://localhost:5450/warehouse'
     username: 'warehouseuser'
     password: 'docker'
-
     driver-class-name: 'org.postgresql.Driver'
 server:
   port: 8050
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: Warehose Service Application. Responisible for inventories stock
+    version: 1.0.0
+
+management:
+  endpoints.web.exposure.include: '*'
+  endpoint.health.show-details: always
+  security.enabled: false
+endpoints.health.sensitive: false
 eureka:
   client:
     registryFetchIntervalInSeconds: 10
